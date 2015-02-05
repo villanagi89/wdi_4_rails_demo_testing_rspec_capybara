@@ -67,19 +67,18 @@ RSpec.describe CommentsController do
 
   describe 'POST create' do
     context 'with valid attributes' do
+
       it 'saves a new comment' do
-        #set up
-    article = Article.create!(title:'Words Words Words', body:'more words')
-     params = {article_id: article.id}
-
-     #validate
-
-     expect {
-      post :create, comment: valid_attributes,
-      }.to change(Comment, :count).by 1
+      #set up
+        article = Article.create!(title:'Words Words Words', body:'more words')
+        #validate
+        expect {
+        post :create, comment: valid_attributes, article_id: article.id
+        }.to change(Comment, :count).by 1
+      end
 
 
 
-
-
+    end
+  end
 end
