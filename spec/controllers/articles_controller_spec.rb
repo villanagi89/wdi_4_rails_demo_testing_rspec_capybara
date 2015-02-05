@@ -67,6 +67,7 @@ RSpec.describe ArticlesController do
   describe 'POST create' do
     context 'with valid attributes' do
       it 'saves a new article' do
+
         expect {
           post :create, article: valid_attributes
         }.to change(Article, :count).by 1
